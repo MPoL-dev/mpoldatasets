@@ -20,3 +20,5 @@ HD163296_CO.npz: HD163296_CO.ms
 clean:
 	rm -rf HD163296_CO.fits
 	rm -rf HD163296_CO.ms.tgz
+	rm -rf HD163296_CO.ms
+	rm -rf HD163296_CO.npz
