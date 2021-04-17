@@ -1,5 +1,7 @@
 .PHONY: Makefile clean 
 
+all: HD163296_continuum.fits HD163296_continuum.ms
+
 # download the files 
 HD163296_continuum.fits:
 	wget https://almascience.eso.org/almadata/lp/DSHARP/images/HD163296_continuum.fits

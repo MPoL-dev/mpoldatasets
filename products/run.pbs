@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+#PBS -l walltime=4:00:00
+#PBS -l nodes=1:ppn=4
+#PBS -A ipc5094_b_g_sc_default
+
+cd $PBS_O_WORKDIR
+
+make -j 4
