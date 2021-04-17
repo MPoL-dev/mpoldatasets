@@ -19,3 +19,12 @@ The products from this are uploaded to [this Zenodo repository](https://doi.org/
 Follow the [MPoL developer documentation](https://mpol-dev.github.io/MPoL/developer-documentation.html) about writing a tutorial using a Jupyter notebook. If your tutorial requires a dataset, the simplest solution is to upload your own dataset to your own Zenodo repository and link to your custom link. Be sure to provide the pre-processing script in the Zenodo repository for reference.
 
 You might also consider integrating the processing script into this package by opening a pull request. 
+
+
+## Installation
+
+This package depends on CASA6 `casatools` and so must be installed in the following manner
+
+    $ pip install --extra-index-url https://casa-pip.nrao.edu/repository/pypi-casa-release/simple .
+
+For more information on this requirement, see the discussion in the [visread documentation](https://visread.readthedocs.io/en/latest/installation.html).

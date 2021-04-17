@@ -41,7 +41,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/MPoL-dev/mpoldatasets",
-    install_requires=["numpy", "astropy", "requests"],
+    install_requires=["numpy", "astropy", "requests", "casatools"],
     extras_require=EXTRA_REQUIRES,
     packages=setuptools.find_packages("src"),
     package_dir={"": "src"},
