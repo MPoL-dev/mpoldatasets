@@ -1,0 +1,8 @@
+#!/bin/bash
+#PBS -l walltime=24:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -A ipc5094_b_g_sc_default
+
+echo "Job started"
+cd $PBS_O_WORKDIR
+make HD163296_continuum.fits

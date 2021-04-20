@@ -130,3 +130,14 @@ dmypy.json
 
 # API key
 project_setup.sh 
+
+# script outputs
+*.pbs.e*
+*.pbs.o*
+
+# products
+*.fits
+*.ms 
+*.ms.contsub
+*.ms.tgz
+*.tar.gz
