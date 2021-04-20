@@ -28,3 +28,7 @@ This package depends on CASA6 `casatools` and so must be installed in the follow
     $ pip install --extra-index-url https://casa-pip.nrao.edu/repository/pypi-casa-release/simple .
 
 For more information on this requirement, see the discussion in the [visread documentation](https://visread.readthedocs.io/en/latest/installation.html).
+
+## Running
+
+This package will copy all finalized products to the `DATASET_BULID_DIR` environment variable. If `None`, defaults to the local directory of each dir.
