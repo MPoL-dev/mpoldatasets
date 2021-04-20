@@ -31,4 +31,4 @@ For more information on this requirement, see the discussion in the [visread doc
 
 ## Running
 
-This package will copy all finalized products to the `DATASET_BULID_DIR` environment variable. If `None`, defaults to the local directory of each dir.
+This package will copy all finalized products to the `zenodo-staging` directory. 

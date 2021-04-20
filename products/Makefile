@@ -1,6 +1,12 @@
-.PHONY: all HD163296-DSHARP-12CO HD163296-DSHARP-continuum
+all: ALMA-logo HD143006-DSHARP-continuum HD163296-DSHARP-12CO HD163296-DSHARP-continuum
 
-all: HD163296-DSHARP-12CO HD163296-DSHARP-continuum
+.PHONY: all ${all}
+
+ALMA-logo:
+	$(MAKE) -C ALMA-logo
+
+HD143006-DSHARP-continuum:
+	$(MAKE) -C HD143006-DSHARP-continuum
 
 HD163296-DSHARP-continuum: 
 	$(MAKE) -C HD163296-DSHARP-continuum
