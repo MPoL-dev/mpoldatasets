@@ -34,7 +34,10 @@ clean:
 	rm -rf logo_cube.fits
 	rm -rf sim
 	rm -rf logo_cube.noise.ms 
+	rm -rf logo_cube.noise.npz
 	rm -rf logo_cube.dirty.* 
 	rm -rf logo_cube.tclean.* 
+	rm -rf casa*.log
+	rm -rf *.last
 	
 	
