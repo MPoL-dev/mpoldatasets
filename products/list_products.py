@@ -27,3 +27,10 @@ r = requests.get(
 print(r.url)
 
 print(json.dumps(r.json(), sort_keys=True, indent=4))
+
+# get the list of file depositions currently in the repository target, and their md5sums.
+# calculate the md5sums for any files which are currently duplicates in this repo
+# if the md5sum is different, stage that file for upload
+# create a new version of zenodo repo
+# upload files
+# do manual publish
