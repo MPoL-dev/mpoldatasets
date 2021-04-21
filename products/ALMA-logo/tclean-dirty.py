@@ -1,12 +1,11 @@
-import beam_utils
-import beam_utils.image
+import mpoldatasets.image
 
 import casatasks
 
-ms_path = "sim.alma.cycle7.7.noisy.ms"
+ms_path = "logo_cube.noise.ms"
 
-imname = "cube"
-beam_utils.image.clear_extensions(imname)
+imname = "logo_cube.dirty"
+mpoldatasets.image.clear_extensions(imname)
 
 imsize = 512
 
@@ -18,9 +17,12 @@ casatasks.tclean(
     weighting="briggs",
     robust=0.5,
     imsize=800,
-    cell="0.005arcsec",
+    cell="0.007arcsec",
     niter=0,
     interactive=False,
     perchanweightdensity=False,
     restoringbeam="common",
 )
+
+# produce a cleaned image
+mpoldatasets.image.exportfits(imname + ".image", imname + ".fits")

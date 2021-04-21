@@ -16,7 +16,7 @@ HD143006_continuum.ms: HD143006_continuum.ms.tgz
 
 # make our own tclean version to check
 HD143006_tclean.fits: HD143006_continuum.ms clean.py
-	python clean.py
+	python tclean.py
 
 # process ms into an npz file using python script 
 # assumes virtual environment has been activated prior
