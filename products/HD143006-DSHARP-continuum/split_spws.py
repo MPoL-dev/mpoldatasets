@@ -1,7 +1,6 @@
 import casatasks
 import casatools
-import os
-import shutil
+import pathlib
 
 # initialize the relevant CASA tools
 tb = casatools.table()
@@ -14,6 +13,8 @@ stem = "{:02d}.ms"
 tb.open(vis + "/DATA_DESCRIPTION")
 SPECTRAL_WINDOW_ID = tb.getcol("SPECTRAL_WINDOW_ID")
 tb.close()
+
+pathlib.Path("ms_split").mkdir(parents=True, exist_ok=True)
 
 # split each spw to its own ms
 for spw in SPECTRAL_WINDOW_ID:

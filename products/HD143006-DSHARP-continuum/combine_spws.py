@@ -49,4 +49,4 @@ cube = visread.Cube(
     CASA_convention=False,
 )
 # save to NPZ
-cube.to_npz("cont.npz")
+cube.to_npz("HD143006_continuum.npz")

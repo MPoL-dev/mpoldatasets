@@ -25,7 +25,9 @@ version = get_version("src/mpoldatasets/__init__.py")
 
 EXTRA_REQUIRES = {
     "test": ["pytest", "matplotlib"],
-    "docs": ["matplotlib",],
+    "docs": [
+        "matplotlib",
+    ],
 }
 
 EXTRA_REQUIRES["dev"] = (
@@ -41,7 +43,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/MPoL-dev/mpoldatasets",
-    install_requires=["numpy", "astropy", "requests", "casatools"],
+    install_requires=["numpy", "astropy", "requests", "casatools", "casatasks"],
     extras_require=EXTRA_REQUIRES,
     packages=setuptools.find_packages("src"),
     package_dir={"": "src"},
