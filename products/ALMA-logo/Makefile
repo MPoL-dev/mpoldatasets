@@ -16,6 +16,7 @@ logo_cube.noise.ms: logo_cube.fits simobserve_cube.py
 
 logo_cube.noise.ms.tar.gz: logo_cube.noise.ms
 	tar cvzf logo_cube.noise.ms.tar.gz logo_cube.noise.ms
+	cp logo_cube.noise.ms.tar.gz ../zenodo-staging/
 
 logo_cube.noise.npz: logo_cube.noise.ms convert_ms_to_npz.py
 	python convert_ms_to_npz.py
@@ -34,6 +35,7 @@ clean:
 	rm -rf logo_cube.fits
 	rm -rf sim
 	rm -rf logo_cube.noise.ms 
+	rm -rf logo_cube.noise.ms.tar.gz 
 	rm -rf logo_cube.noise.npz
 	rm -rf logo_cube.dirty.* 
 	rm -rf logo_cube.tclean.* 
