@@ -141,3 +141,4 @@ project_setup.sh
 *.ms.contsub
 *.ms.tgz
 *.tar.gz
+*.npz
