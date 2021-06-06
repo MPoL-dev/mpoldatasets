@@ -17,6 +17,7 @@ for spw in spws:
     sigma_rescale = examine.get_sigma_rescale_datadescid(fname, spw)
 
     # get processed visibilities
+    # including complex conjugation
     d = examine.get_processed_visibilities(fname, spw, sigma_rescale=sigma_rescale)
 
     # flatten and concatenate

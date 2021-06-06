@@ -1,4 +1,4 @@
-all: HD143006_continuum.fits HD143006_continuum.ms HD143006_tclean.fits HD143006_continuum.npz
+all: HD143006_continuum.fits HD143006_continuum.ms HD143006_tclean.fits HD143006_continuum.npz rawscale/00.png rescale/00.png average/00.png
 
 .PHONY: all Makefile clean 
 
