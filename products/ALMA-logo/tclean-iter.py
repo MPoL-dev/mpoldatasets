@@ -27,6 +27,7 @@ casatasks.tclean(
     interactive=False,
     perchanweightdensity=False,
     restoringbeam="common",
+    savemodel="modelcolumn",
 )
 
 toc = time.perf_counter()

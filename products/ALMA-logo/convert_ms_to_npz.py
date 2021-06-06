@@ -1,6 +1,16 @@
 import visread
 
-cube = visread.read("logo_cube.noise.ms")
-# swap convention
-cube.swap_convention(CASA_convention=False)
-cube.to_npz("logo_cube.noise.npz")
+fname = "logo_cube.noise.ms"
+
+# for a given spw
+
+# get channel frequency info
+
+# broadcast baselines
+# average polarizations
+
+# apply flags
+
+# remove cross correlations
+
+# swap CASA convention

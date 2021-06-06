@@ -1,13 +1,15 @@
 .PHONY: Makefile clean all
 
-all: logo_cont.fits logo_cube.fits logo_cube.noise.ms.tar.gz logo_cube.noise.npz logo_cube.dirty.fits logo_cube.tclean.fits
+all: logo_cont.fits logo_cube.fits logo_cube.noise.ms.tar.gz logo_cube.noise.npz logo_cube.dirty.fits logo_cube.tclean.fits spw_histogram.png
 
 # make FITS cubes from PNG
 logo_cont.fits: alma-logo-white-outline.png make_logo_cont.py
 	python make_logo_cont.py
+	cp logo_cont.fits ../zenodo-staging/
 
 logo_cube.fits: logo_cont.fits 
 	python make_logo_cube.py
+	cp logo_cube.fits ../zenodo-staging/
 
 # make mock datasets using simobserve 
 logo_cube.noise.ms: logo_cube.fits simobserve_cube.py 
@@ -29,6 +31,9 @@ logo_cube.dirty.fits: logo_cube.noise.ms tclean-dirty.py
 logo_cube.tclean.fits: logo_cube.noise.ms tclean-iter.py 
 	python tclean-iter.py 
 	cp logo_cube.tclean.fits ../zenodo-staging/
+
+spw_histogram.png: tclean-iter.py logo_cube.tclean.fits logo_cube.noise.ms spw_scatter.py
+	python spw_scatter.py 
 
 clean:
 	rm -rf logo_cont.fits

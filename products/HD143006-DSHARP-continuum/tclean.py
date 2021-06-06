@@ -12,6 +12,8 @@ vis = "HD143006_continuum.ms"
 imagename = "HD143006_tclean"
 mpoldatasets.image.clear_extensions(imagename)
 
+casatasks.delmod(vis=vis)
+
 tic = time.perf_counter()
 
 casatasks.tclean(
@@ -32,6 +34,7 @@ casatasks.tclean(
     uvtaper=[".042arcsec", ".020arcsec", "172.1deg"],
     mask=common_mask,
     nterms=1,
+    savemodel="modelcolumn",
 )
 
 toc = time.perf_counter()

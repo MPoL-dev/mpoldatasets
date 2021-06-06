@@ -15,15 +15,20 @@ HD143006_continuum.ms: HD143006_continuum.ms.tgz
 	touch -t 2008010000 HD143006_continuum.ms # update timestamp to be newer than .tar.gz
 
 # make our own tclean version to check
-HD143006_tclean.fits: HD143006_continuum.ms clean.py
+HD143006_tclean.fits: HD143006_continuum.ms tclean.py
 	python tclean.py
+
+rawscale/00.png rescale/00.png: calculate_rescale.py HD143006_continuum.ms
+	python calculate_rescale.py
+
+average/00.png: calculate_averaged.py HD143006_continuum.ms
+	python calculate_averaged.py
 
 # process ms into an npz file using python script 
 # assumes virtual environment has been activated prior
 # to running
-HD143006_continuum.npz: HD143006_continuum.ms split_spws.py combine_spws.py
-	python split_spws.py
-	python combine_spws.py 
+HD143006_continuum.npz: HD143006_continuum.ms HD143006_tclean.fits process_to_npz.py
+	python process_to_npz.py
 	cp HD143006_continuum.npz ../zenodo-staging/
 
 clean:
@@ -31,9 +36,12 @@ clean:
 	rm -rf HD143006_tclean.*
 	rm -rf HD143006_continuum.npz
 	rm -rf ms_split
+	rm -rf HD143006_continuum.ms
+	rm -rf HD143006_continuum.fits
+	rm -rf rawscale 
+	rm -rf rescale 
+	rm -rf average
 
 cleanall: clean
-	rm -rf HD143006_continuum.fits
 	rm -rf HD143006_continuum.ms.tgz
-	rm -rf HD143006_continuum.ms
 	
