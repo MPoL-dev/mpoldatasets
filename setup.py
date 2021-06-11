@@ -47,6 +47,7 @@ setuptools.setup(
     extras_require=EXTRA_REQUIRES,
     packages=setuptools.find_packages("src"),
     package_dir={"": "src"},
+    scripts=["scripts/plot_spectral_windows.py"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
@@ -54,3 +55,5 @@ setuptools.setup(
     ],
     python_requires=">=3.6",
 )
+
+# configure scripts via: https://python-packaging.readthedocs.io/en/latest/command-line-scripts.html

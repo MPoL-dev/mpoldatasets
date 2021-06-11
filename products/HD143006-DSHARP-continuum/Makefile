@@ -1,4 +1,6 @@
-all: HD143006_continuum.fits HD143006_continuum.ms HD143006_tclean.fits HD143006_continuum.npz rawscale/00.png rescale/00.png average/00.png
+all: HD143006_continuum.fits HD143006_continuum.ms HD143006_tclean.fits HD143006_continuum.npz rawscaled/00.png rescaled/00.png averaged/00.png
+
+plots: rawscaled/00.png rescaled/00.png averaged/00.png
 
 .PHONY: all Makefile clean 
 
@@ -18,11 +20,15 @@ HD143006_continuum.ms: HD143006_continuum.ms.tgz
 HD143006_tclean.fits: HD143006_continuum.ms tclean.py
 	python tclean.py
 
-rawscale/00.png rescale/00.png: calculate_rescale.py HD143006_continuum.ms
-	python calculate_rescale.py
+# make scatter diagnostic plots
+rawscaled/00.png: HD143006_continuum.ms HD143006_tclean.fits
+	plot_spectral_windows.py $< --rawscaled
 
-average/00.png: calculate_averaged.py HD143006_continuum.ms
-	python calculate_averaged.py
+rescaled/00.png: HD143006_continuum.ms HD143006_tclean.fits
+	plot_spectral_windows.py $< --rescaled
+
+averaged/00.png: HD143006_continuum.ms HD143006_tclean.fits
+	plot_spectral_windows.py $< --averaged
 
 # process ms into an npz file using python script 
 # assumes virtual environment has been activated prior
@@ -38,9 +44,9 @@ clean:
 	rm -rf ms_split
 	rm -rf HD143006_continuum.ms
 	rm -rf HD143006_continuum.fits
-	rm -rf rawscale 
-	rm -rf rescale 
-	rm -rf average
+	rm -rf rawscaled 
+	rm -rf rescaled 
+	rm -rf averaged
 
 cleanall: clean
 	rm -rf HD143006_continuum.ms.tgz

@@ -1,0 +1,21 @@
+#!/bin/bash 
+
+#PBS -l walltime=2:00:00
+#PBS -l nodes=1:ppn=10
+#PBS -A ipc5094_b_g_sc_default
+#PBS -N mpoldatasets
+#PBS -m ae 
+#PBS -M ipc5094@psu.edu
+#PBS -j oe 
+
+# change to current directory
+cd $PBS_O_WORKDIR
+
+# copy the `products` folder over to the DSETS_SCRATCH_DIR
+cp -r products $DSETS_SCRATCH_DIR 
+
+# change to scratch dir 
+cd $DSETS_SCRATCH_DIR 
+
+# run parallel make 
+make -j 10

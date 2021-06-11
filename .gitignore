@@ -142,3 +142,15 @@ project_setup.sh
 *.ms.tgz
 *.tar.gz
 *.npz
+
+products/ALMA-logo/averaged/
+products/ALMA-logo/rescaled/
+products/ALMA-logo/rawscaled/
+products/ALMA-logo/sim/
+products/ALMA-logo/logo_cube.*
+
+products/HD143006-DSHARP-continuum/averaged/
+products/HD143006-DSHARP-continuum/rescaled/
+products/HD143006-DSHARP-continuum/rawscaled/
+products/HD143006-DSHARP-continuum/HD143006_tclean*
+products/HD143006-DSHARP-continuum/list_obs_output.txt

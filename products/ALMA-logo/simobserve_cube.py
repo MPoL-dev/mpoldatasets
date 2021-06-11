@@ -1,7 +1,4 @@
-import numpy as np
-import visread
 import casatasks
-import os
 
 # Generate an mock measurement set of the spectral cube
 
