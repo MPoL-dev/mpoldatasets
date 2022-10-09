@@ -8,8 +8,13 @@
 #PBS -M ipc5094@psu.edu
 #PBS -j oe 
 
-# change to current directory
-cd $PBS_O_WORKDIR
+
+#SBATCH --nodes=1 
+#SBATCH --ntasks=1 
+#SBATCH --mem=8GB 
+#SBATCH --time=1:00:00 
+#SBATCH --partition=ipc5094_c
+
 
 # copy the `products` folder over to the DSETS_SCRATCH_DIR
 cp -r products $DSETS_SCRATCH_DIR 
