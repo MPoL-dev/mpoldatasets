@@ -47,6 +47,7 @@ clean:
 	rm -rf rawscaled 
 	rm -rf rescaled 
 	rm -rf averaged
+	rm -rf *.png
 
 cleanall: clean
 	rm -rf HD143006_continuum.ms.tgz

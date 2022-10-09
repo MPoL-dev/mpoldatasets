@@ -29,6 +29,7 @@ def plot_rescaled(fname):
         # calculate rescale factor and replot
         sigma_rescale = examine.get_sigma_rescale_datadescid(fname, spw)
         fig = examine.plot_scatter_datadescid(fname, spw, sigma_rescale=sigma_rescale)
+        fig.suptitle(r"$\sigma = {:.2f}$".format(sigma_rescale))
         fig.savefig("{:}/{:02d}.png".format(scaledir, spw), dpi=300)
 
         plt.close("all")
