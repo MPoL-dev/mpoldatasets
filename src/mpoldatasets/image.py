@@ -1,4 +1,5 @@
 from astropy.io import fits
+from astropy.constants import c
 import numpy as np
 import casatasks
 
@@ -94,7 +95,7 @@ def get_vels_from_freqs(header):
     restfreq = header["RESTFRQ"]  # [Hz]
     freqs = header["CRVAL3"] + np.arange(header["NAXIS3"]) * header["CDELT3"]  # [Hz]
 
-    vels = beam_utils.constants.c_kms * (restfreq - freqs) / restfreq
+    vels = c.value * 1e-3 * (restfreq - freqs) / restfreq
 
     return vels
 
