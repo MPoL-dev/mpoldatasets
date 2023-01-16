@@ -69,9 +69,9 @@ def plot_averaged(fname):
         sigma_rescale = scatter.get_sigma_rescale_datadescid(fname, spw)
 
         # get processed visibilities
-        data, model_data, weight, flag = process.get_processed_visibilities(fname, spw, sigma_rescale=sigma_rescale)
+        d = process.get_processed_visibilities(fname, spw, sigma_rescale=sigma_rescale, incl_model_data=True)
 
-        scatter_visibilities = scatter.get_averaged_scatter(data, model_data, weight, flag=flag)
+        scatter_visibilities = scatter.get_averaged_scatter(d["data"], d["model_data"], d["weight"], flag=d["flag"])
 
         fig = visualization.plot_averaged_scatter(scatter_visibilities)
         fig.savefig("{:}/{:02d}.png".format(avgdir, spw), dpi=300)

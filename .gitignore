@@ -142,6 +142,7 @@ project_setup.sh
 *.ms.tgz
 *.tar.gz
 *.npz
+*.asdf
 
 products/ALMA-logo/averaged/
 products/ALMA-logo/rescaled/
@@ -156,4 +157,11 @@ products/HD143006-DSHARP-continuum/rawscaled/
 products/HD143006-DSHARP-continuum/HD143006_tclean*
 products/HD143006-DSHARP-continuum/TempLattice*
 products/HD143006-DSHARP-continuum/list_obs_output.txt
+
+products/AS209-DSHARP-continuum/*.png
+products/AS209-DSHARP-continuum/averaged
+products/AS209-DSHARP-continuum/rescaled
+products/AS209-DSHARP-continuum/rawscaled
+products/AS209-DSHARP-continuum/AS209_tclean*
+
 
