@@ -1,6 +1,6 @@
 .PHONY: Makefile clean all upload
 
-PRODUCTS := logo_cont.fits logo_cube.fits HD143006_continuum.npz logo_cube.dirty.fits logo_cube.noise.ms.tar.gz logo_cube.noise.npz logo_cube.tclean.fits
+PRODUCTS := logo_cont.fits logo_cube.fits HD143006_continuum.npz logo_cube.dirty.fits logo_cube.noise.ms.tar.gz logo_cube.noise.npz logo_cube.tclean.fits AS209_continuum_averaged.asdf
 
 # calculate md5 sums of all products that are on disk locally
 locallist.chk: ${PRODUCTS}
